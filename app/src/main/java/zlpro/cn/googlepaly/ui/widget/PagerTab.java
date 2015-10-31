@@ -148,7 +148,9 @@ public class PagerTab extends ViewGroup {
 
 	private void onViewPagerChanged() {
 		mViewPager.setOnPageChangeListener(mPageListener);//给ViewPager设置监听
+
 		mTabCount = mViewPager.getAdapter().getCount();//有多少个tab需要看ViewPager有多少个页面
+
 		for (int i = 0; i < mTabCount; i++) {
 			if (mViewPager.getAdapter() instanceof IconTabProvider) {//如果想要使用icon作为tab，则需要adapter实现IconTabProvider接口
 				addIconTab(i, ((IconTabProvider) mViewPager.getAdapter()).getPageIconResId(i));
